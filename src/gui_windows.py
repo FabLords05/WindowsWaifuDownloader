@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox, filedialog
 from PIL import Image, ImageTk
 import io
 import threading
-from src.waifu import WaifuDownloaderAPI  # Make sure waifu.py is in a 'src' folder or adjust import
+from waifu import WaifuDownloaderAPI  # Make sure waifu.py is in a 'src' folder or adjust import
 
 class WindowsWaifuApp:
     def __init__(self, root):
