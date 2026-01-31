@@ -7,7 +7,7 @@ set -euo pipefail
 
 APP_NAME="WindowsWaifuDownloader"
 SRC_PATH="../src/gui_windows.py"
-ICON_PATH="../data/icons/app.ico"  # update if your icon has a different name or path
+ICON_PATH="..data/icons/moe.nyarchlinux.waifudownloader.ico"  # update if your icon has a different name or path
 OUTPUT_DIR="../dist"
 
 echo "Creating output dir ${OUTPUT_DIR}..."
