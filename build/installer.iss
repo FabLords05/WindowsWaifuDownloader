@@ -1,30 +1,33 @@
-; Inno Setup script for Windows Waifu Downloader
+; Inno Setup script for WaifuDownloader
 ; Edit values below as needed, then compile with Inno Setup (ISCC.exe)
 
 [Setup]
-AppName=Windows Waifu Downloader
+AppName=WaifuDownloader
 AppVersion=0.1
-DefaultDirName={pf}\Windows Waifu Downloader
-DefaultGroupName=Windows Waifu Downloader
+DefaultDirName={pf}\WaifuDownloader
+DefaultGroupName=WaifuDownloader
 DisableProgramGroupPage=no
-OutputBaseFilename=WindowsWaifuInstaller
+OutputBaseFilename=WaifuDownloaderSetup
 Compression=lzma
 SolidCompression=yes
-OutputDir=dist\installer
+OutputDir=..\dist
 
-; If you want to show a license, put a LICENSE.txt file next to this script and uncomment the line below.
-; LicenseFile=..\LICENSE
+; Show the project's LICENSE file during install
+LicenseFile=..\LICENSE
+
+; Use an .ico for the installer if present. If you only have a PNG, convert it to an ICO (see build script).
+SetupIconFile=..\data\icons\moe.nyarchlinux.waifudownloader.ico
 
 [Files]
-; Source should point to the built exe (from pyinstaller). Use backslashes (Windows)
-Source: "dist\WindowsWaifuDownloader.exe"; DestDir: "{app}"; Flags: ignoreversion
+; Source should point to the built exe (from PyInstaller). Path is relative to this script (build/)
+Source: "..\dist\WaifuDownloader.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\Windows Waifu Downloader"; Filename: "{app}\WindowsWaifuDownloader.exe"
-Name: "{commondesktop}\Windows Waifu Downloader"; Filename: "{app}\WindowsWaifuDownloader.exe"; Tasks: desktopicon
+Name: "{group}\WaifuDownloader"; Filename: "{app}\WaifuDownloader.exe"
+Name: "{commondesktop}\WaifuDownloader"; Filename: "{app}\WaifuDownloader.exe"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a &desktop icon"; GroupDescription: "Additional icons:"; Flags: checkedonce
 
 [Run]
-Filename: "{app}\WindowsWaifuDownloader.exe"; Description: "Launch Windows Waifu Downloader"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\WaifuDownloader.exe"; Description: "Launch WaifuDownloader"; Flags: nowait postinstall skipifsilent
